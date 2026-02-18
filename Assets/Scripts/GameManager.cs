@@ -33,12 +33,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //void ShowWin()
+    //{
+    //    FindObjectOfType<LevelLoader>().SetGameEnded();
+    //    pauseButton.SetActive(false);
+    //    winPanel.gameObject.SetActive(true);
+    //    playerController.enabled = false; // stop shooting
+    //    Time.timeScale = 0f;
+    //}
+
     void ShowWin()
     {
-        FindObjectOfType<LevelLoader>().SetGameEnded();
-        pauseButton.SetActive(false);
-        winPanel.gameObject.SetActive(true);
-        playerController.enabled = false; // stop shooting
+        LevelLoader loader = FindObjectOfType<LevelLoader>();
+        if (loader != null)
+            loader.SetGameEnded();
+
+        if (pauseButton != null)
+            pauseButton.SetActive(false);
+
+        if (winPanel != null)
+            winPanel.SetActive(true);
+
+        if (playerController != null)
+            playerController.canShoot = false;  // ? use bool instead
+
         Time.timeScale = 0f;
     }
 

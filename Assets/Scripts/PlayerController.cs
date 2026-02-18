@@ -18,7 +18,7 @@ public class playerController : MonoBehaviour
     private Rigidbody2D rb;
     public LevelLoader levelLoader;
 
-
+    public bool canShoot = true;
     void Start()
     {
 
@@ -27,9 +27,9 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
+         if (!canShoot) return; 
          if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         return;
-
 
         if (Input.GetMouseButtonDown(0) )
         {
