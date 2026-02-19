@@ -137,6 +137,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107436689037199573, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1865030464}
+    - target: {fileID: 107436689037199573, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 779496737242651163, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -217,9 +225,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1306495343733564811, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088018548055632305, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559105693564256984, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1865030464}
+    - target: {fileID: 4559105693564256984, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686280780379897822, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1651894791}
+    - target: {fileID: 4686280780379897822, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartCurrentLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686280780379897822, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4819125511451397903, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911109092448105640, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1865030464}
+    - target: {fileID: 4911109092448105640, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336773845395916476, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626393069870457227, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630078617381299814, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1865030464}
+    - target: {fileID: 5630078617381299814, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6100404409034736410, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -231,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608629376352067165, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6608629376352067165, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -239,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 1651894791}
     - target: {fileID: 6608629376352067165, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: RestartCurrentLevel
       objectReference: {fileID: 0}
     - target: {fileID: 6608629376352067165, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -263,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7577795495594842306, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7577795495594842306, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -271,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 1651894791}
     - target: {fileID: 7577795495594842306, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: RestartCurrentLevel
       objectReference: {fileID: 0}
     - target: {fileID: 7577795495594842306, guid: b4ea40bb4145fd54f9deacd56f56374c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
