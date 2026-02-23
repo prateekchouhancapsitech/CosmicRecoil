@@ -12,4 +12,18 @@ public class LevelData : ScriptableObject
 
     [Header("Boxes")]
     public Vector2[] boxPositions;
+
+    [Header("Blocks")]
+    public BlockData[] blocks;
+
+    [Header("Spikes")]
+    public Vector2[] spikePositions;
+
+    [System.Serializable]
+    public class BlockData
+    {
+        public Vector2 position;
+        public Vector2 scale;
+        public float rotation;
+    }
 }

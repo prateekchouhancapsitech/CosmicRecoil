@@ -16,6 +16,11 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.CompareTag("block"))
+        {
+            Destroy(gameObject);
+        }
+
         if (collision.gameObject.CompareTag("spike"))
         {
             Destroy(gameObject);

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e4a15e895676d44b3524f9f45d8084, type: 3}
+  m_Name: Level_13
+  m_EditorClassIdentifier: 
+  playerStartPosition: {x: -4.39, y: -2.43}
+  playerStartRotation: 0
+  enemyPositions:
+  - {x: 5.19, y: 0.25}
+  boxPositions: []
+  blocks:
+  - position: {x: 4.56, y: 2.63}
+    scale: {x: 2.72, y: 3.28}
+    rotation: 90
+  - position: {x: 4.59, y: -1.8582}
+    scale: {x: 3.031432, y: 3.28}
+    rotation: 90
+  spikePositions: []

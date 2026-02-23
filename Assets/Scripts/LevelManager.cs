@@ -170,6 +170,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static LevelData;
 
 public class LevelManager : MonoBehaviour
 {
@@ -180,6 +181,8 @@ public class LevelManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
     public GameObject boxPrefab;
+    public GameObject blockPrefab;
+    public GameObject spikePrefab;
 
     int currentLevelIndex;
 
@@ -246,7 +249,21 @@ public class LevelManager : MonoBehaviour
                 loader.pauseButton.SetActive(true);
         }
 
+        foreach (BlockData block in level.blocks)
+        {
+            GameObject newBlock = Instantiate(
+                blockPrefab,
+                block.position,
+                Quaternion.Euler(0, 0, block.rotation)
+            );
 
+            newBlock.transform.localScale = block.scale;
+        }
+
+        foreach (Vector2 pos in level.spikePositions)
+        {
+            Instantiate(spikePrefab, pos, Quaternion.identity);
+        }
     }
 
     public void LoadNextLevel()
@@ -275,5 +292,12 @@ public class LevelManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
             Destroy(player);
+
+        foreach (GameObject s in GameObject.FindGameObjectsWithTag("spike"))
+            Destroy(s);
+
+        foreach (GameObject b in GameObject.FindGameObjectsWithTag("block"))
+            Destroy(b);
+  
     }
 }
