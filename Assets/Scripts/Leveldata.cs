@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.U2D.ScriptablePacker;
 
 [CreateAssetMenu(fileName = "NewLevel", menuName = "Levels/Level Data")]
 public class LevelData : ScriptableObject
@@ -17,10 +18,17 @@ public class LevelData : ScriptableObject
     public BlockData[] blocks;
 
     [Header("Spikes")]
-    public Vector2[] spikePositions;
+    public SpikeData[] spikes;
 
     [System.Serializable]
     public class BlockData
+    {
+        public Vector2 position;
+        public Vector2 scale;
+        public float rotation;
+    }
+    [System.Serializable]
+    public class SpikeData
     {
         public Vector2 position;
         public Vector2 scale;

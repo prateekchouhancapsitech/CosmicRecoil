@@ -259,10 +259,15 @@ public class LevelManager : MonoBehaviour
 
             newBlock.transform.localScale = block.scale;
         }
-
-        foreach (Vector2 pos in level.spikePositions)
+        foreach (SpikeData spike in level.spikes)
         {
-            Instantiate(spikePrefab, pos, Quaternion.identity);
+         GameObject newSpike =Instantiate(
+           spikePrefab, 
+           spike.position, 
+           Quaternion.Euler(0, 0, spike.rotation)
+           );
+
+            newSpike.transform.localScale = spike.scale;
         }
     }
 
@@ -300,4 +305,5 @@ public class LevelManager : MonoBehaviour
             Destroy(b);
   
     }
+
 }
