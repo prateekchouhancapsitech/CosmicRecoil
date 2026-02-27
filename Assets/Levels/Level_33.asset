@@ -12,9 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e4a15e895676d44b3524f9f45d8084, type: 3}
   m_Name: Level_33
   m_EditorClassIdentifier: 
-  playerStartPosition: {x: 0, y: 0}
+  playerStartPosition: {x: -1.52, y: -2.89}
   playerStartRotation: 0
-  enemyPositions: []
+  enemyPositions:
+  - {x: 2.49, y: -2.14}
+  - {x: 2.49, y: 0.44}
+  - {x: 2.49, y: 3.11}
   boxPositions: []
-  blocks: []
-  spikePositions: []
+  blocks:
+  - position: {x: 1.88, y: -0.17}
+    scale: {x: 2.638785, y: 0.5}
+    rotation: 0
+  - position: {x: 1.88, y: -2.53}
+    scale: {x: 2.638785, y: 0.5}
+    rotation: 0
+  - position: {x: 1.88, y: 2.16}
+    scale: {x: 2.638785, y: 0.5}
+    rotation: 0
+  - position: {x: 4.5778, y: 0.07505}
+    scale: {x: 7.75824, y: 2.96877}
+    rotation: 90
+  - position: {x: -4.5346, y: 0.07}
+    scale: {x: 7.75824, y: 3.559789}
+    rotation: 90
+  spikes: []
