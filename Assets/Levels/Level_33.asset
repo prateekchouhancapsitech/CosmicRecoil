@@ -26,7 +26,7 @@ MonoBehaviour:
   - position: {x: 1.88, y: -2.53}
     scale: {x: 2.638785, y: 0.5}
     rotation: 0
-  - position: {x: 1.88, y: 2.16}
+  - position: {x: 1.88, y: 2}
     scale: {x: 2.638785, y: 0.5}
     rotation: 0
   - position: {x: 4.5778, y: 0.07505}
