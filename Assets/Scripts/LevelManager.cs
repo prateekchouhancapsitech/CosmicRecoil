@@ -1,173 +1,3 @@
-//using UnityEngine;
-
-//public class LevelManager : MonoBehaviour
-//{
-//    [Header("Level Data")]
-//    public LevelData[] levels;
-
-//    [Header("Prefabs")]
-//    public GameObject playerPrefab;
-//    public GameObject enemyPrefab;
-//    public GameObject boxPrefab;
-
-//    int currentLevelIndex;
-
-//    void Start()
-//    {
-//        currentLevelIndex = PlayerPrefs.GetInt("CurrentLevel", 0);
-//        LoadLevel(currentLevelIndex);
-//    }
-
-//    public void LoadLevel(int index)
-//    {
-//        ClearLevel();
-
-//        if (index >= levels.Length)
-//        {
-//            Debug.Log("All Levels Completed!");
-//            return;
-//        }
-
-//        currentLevelIndex = index;
-//        LevelData level = levels[index];
-
-//        // Spawn Player
-//        Instantiate(playerPrefab,
-//            level.playerStartPosition,
-//            Quaternion.Euler(0, 0, level.playerStartRotation));
-
-//        // Spawn Enemies
-//        foreach (Vector2 pos in level.enemyPositions)
-//        {
-//            Instantiate(enemyPrefab, pos, Quaternion.identity);
-//        }
-
-//        // Spawn Boxes
-//        foreach (Vector2 pos in level.boxPositions)
-//        {
-//            Instantiate(boxPrefab, pos, Quaternion.identity);
-//        }
-//    }
-
-//    public void LoadNextLevel()
-//    {
-//        currentLevelIndex++;
-
-//        PlayerPrefs.SetInt("CurrentLevel", currentLevelIndex);
-//        PlayerPrefs.Save();
-
-//        LoadLevel(currentLevelIndex);
-//    }
-
-//    void ClearLevel()
-//    {
-//        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-//        foreach (GameObject e in enemies)
-//            Destroy(e);
-
-//        GameObject[] boxes = GameObject.FindGameObjectsWithTag("box");
-//        foreach (GameObject b in boxes)
-//            Destroy(b);
-
-//        GameObject player = GameObject.FindGameObjectWithTag("Player");
-//        if (player != null)
-//            Destroy(player);
-//    }
-//}
-
-
-//using UnityEngine;
-
-//public class LevelManager : MonoBehaviour
-//{
-//    [Header("Level Data")]
-//    public LevelData[] levels;
-
-//    [Header("Prefabs")]
-//    public GameObject playerPrefab;
-//    public GameObject enemyPrefab;
-//    public GameObject boxPrefab;
-
-//    int currentLevelIndex;
-
-//    void Start()
-//    {
-//        currentLevelIndex = PlayerPrefs.GetInt("CurrentLevel", 0);
-//        LoadLevel(currentLevelIndex);
-//    }
-
-//    public void LoadLevel(int index)
-//    {
-//        ClearLevel();
-
-//        if (index >= levels.Length)
-//        {
-//            Debug.Log("All Levels Completed!");
-//            return;
-//        }
-
-//        currentLevelIndex = index;
-//        LevelData level = levels[index];
-
-//        // ?? Spawn Player
-//        GameObject player = Instantiate(playerPrefab,
-//            level.playerStartPosition,
-//            Quaternion.Euler(0, 0, level.playerStartRotation));
-
-//        // ?? Get playerController from new player
-//        playerController pc = player.GetComponent<playerController>();
-
-//        // ?? Reset shooting for new level
-//        if (pc != null)
-//            pc.canShoot = true;
-
-//        // ?? Update GameManager reference
-//        GameManager gm = FindObjectOfType<GameManager>();
-//        if (gm != null)
-//            gm.playerController = pc;
-
-//        // Spawn Enemies
-//        foreach (Vector2 pos in level.enemyPositions)
-//        {
-//            Instantiate(enemyPrefab, pos, Quaternion.identity);
-//        }
-
-//        // Spawn Boxes
-//        foreach (Vector2 pos in level.boxPositions)
-//        {
-//            Instantiate(boxPrefab, pos, Quaternion.identity);
-//        }
-//    }
-
-//    public void LoadNextLevel()
-//    {
-//        currentLevelIndex++;
-
-//        PlayerPrefs.SetInt("CurrentLevel", currentLevelIndex);
-//        PlayerPrefs.Save();
-
-//        LoadLevel(currentLevelIndex);
-//    }
-
-//    void ClearLevel()
-//    {
-//        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-//        foreach (GameObject e in enemies)
-//            Destroy(e);
-
-//        GameObject[] boxes = GameObject.FindGameObjectsWithTag("box");
-//        foreach (GameObject b in boxes)
-//            Destroy(b);
-
-//        GameObject player = GameObject.FindGameObjectWithTag("Player");
-//        if (player != null)
-//            Destroy(player);
-//    }
-//}
-
-
-
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static LevelData;
@@ -198,6 +28,12 @@ public class LevelManager : MonoBehaviour
 
         ClearLevel();
 
+        GameManager gm = FindObjectOfType<GameManager>();
+        if (gm != null)
+        {
+            gm.ResetEnemyCount();
+        }
+
         if (index >= levels.Length)
         {
             Debug.Log("All Levels Completed!");
@@ -219,7 +55,7 @@ public class LevelManager : MonoBehaviour
         if (pc != null)
             pc.canShoot = true;
 
-        GameManager gm = FindObjectOfType<GameManager>();
+        //GameManager gm = FindObjectOfType<GameManager>();
         if (gm != null)
             gm.playerController = pc;
 
@@ -248,26 +84,31 @@ public class LevelManager : MonoBehaviour
             if (loader.pauseButton != null)
                 loader.pauseButton.SetActive(true);
         }
-
-        foreach (BlockData block in level.blocks)
+        if (level.blocks != null)
         {
-            GameObject newBlock = Instantiate(
-                blockPrefab,
-                block.position,
-                Quaternion.Euler(0, 0, block.rotation)
-            );
+            foreach (BlockData block in level.blocks)
+            {
+                GameObject newBlock = Instantiate(
+                    blockPrefab,
+                    block.position,
+                    Quaternion.Euler(0, 0, block.rotation)
+                );
 
-            newBlock.transform.localScale = block.scale;
+                newBlock.transform.localScale = block.scale;
+            }
         }
-        foreach (SpikeData spike in level.spikes)
+        if (level.spikes != null)
         {
-         GameObject newSpike =Instantiate(
-           spikePrefab, 
-           spike.position, 
-           Quaternion.Euler(0, 0, spike.rotation)
-           );
+            foreach (SpikeData spike in level.spikes)
+            {
+                GameObject newSpike = Instantiate(
+                    spikePrefab,
+                    spike.position,
+                    Quaternion.Euler(0, 0, spike.rotation)
+                );
 
-            newSpike.transform.localScale = spike.scale;
+                newSpike.transform.localScale = spike.scale;
+            }
         }
     }
 

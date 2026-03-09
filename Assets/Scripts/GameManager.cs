@@ -32,16 +32,6 @@ public class GameManager : MonoBehaviour
             ShowWin();
         }
     }
-
-    //void ShowWin()
-    //{
-    //    FindObjectOfType<LevelLoader>().SetGameEnded();
-    //    pauseButton.SetActive(false);
-    //    winPanel.gameObject.SetActive(true);
-    //    playerController.enabled = false; // stop shooting
-    //    Time.timeScale = 0f;
-    //}
-
     void ShowWin()
     {
         LevelLoader loader = FindObjectOfType<LevelLoader>();
@@ -60,6 +50,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-
+    public void ResetEnemyCount()
+    {
+        enemyCount = 0;
+    }
 
 }
